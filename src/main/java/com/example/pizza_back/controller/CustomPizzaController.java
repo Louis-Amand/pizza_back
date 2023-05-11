@@ -1,5 +1,7 @@
 package com.example.pizza_back.controller;
 
+import com.example.pizza_back.entity.Base;
+import com.example.pizza_back.entity.CustomPizza;
 import com.example.pizza_back.entity.Ingredient;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
@@ -8,12 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.function.Predicate;
 
 @RestController
@@ -22,7 +21,7 @@ public class CustomPizzaController {
     @GetMapping("/api/ingredients")
     public Object getIngredient() throws IOException {
         Gson gson = new Gson();
-        Object object = gson.fromJson(new FileReader("./jsonData/ingredients.json"), Object.class);
+        Object object = gson.fromJson(new FileReader("./assets/json/ingredient/ingredients.json"), Object.class);
 
         return object;
     }
@@ -112,5 +111,154 @@ public class CustomPizzaController {
         writer.close();
 
         return Ingredients;
+    }
+
+    @GetMapping("/api/bases")
+    public ArrayList<Base> getBases() throws IOException {
+
+        String fileName = "./assets/json/bases/bases.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        ArrayList<Base> bases = new Gson().fromJson(json, new TypeToken<ArrayList<Base>>() {
+        }.getType());
+        // convertir la chaîne JSON en ArrayList d'objets
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(bases);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+
+        return bases;
+    }
+
+    @PostMapping("/api/base")
+    public ArrayList<Base> postBase(@RequestBody Base objet) throws IOException {
+
+        String fileName = "./assets/json/bases/bases.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        // convertir la chaîne JSON en ArrayList d'objets
+        ArrayList<Base> bases = new Gson().fromJson(json, new TypeToken<ArrayList<Base>>() {
+        }.getType());
+
+        // ajouter un nouvel objet à l'ArrayList
+        bases.add(new Base(objet.getName(), objet.getId()));
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(bases);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+
+        return bases;
+    }
+
+    @DeleteMapping("/api/deleteBase/{id}")
+    public ArrayList<Base> deleteBaseFromList(@PathVariable String id) throws IOException {
+
+        String fileName = "./assets/json/bases/bases.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        // convertir la chaîne JSON en ArrayList d'objets
+        ArrayList<Base> bases = new Gson().fromJson(json, new TypeToken<ArrayList<Base>>() {
+        }.getType());
+
+        // ajouter un nouvel objet à l'ArrayList
+        bases.removeIf(new Predicate<Base>() {
+            @Override
+            public boolean test(Base base) {
+                if (base.getId() == Integer.parseInt(id)) {
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(bases);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+
+        return bases;
+    }
+
+    @PutMapping("/api/base/{id}")
+    public ArrayList<Base> updateIngredients(@PathVariable String id, @RequestBody Base objet) throws IOException {
+
+        String fileName = "./assets/json/bases/bases.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        // convertir la chaîne JSON en ArrayList d'objets
+        ArrayList<Base> bases = new Gson().fromJson(json, new TypeToken<ArrayList<Base>>() {
+        }.getType());
+
+        // ajouter un nouvel objet à l'ArrayList
+        for (Base Base : bases) {
+            if (Base.getId() == Integer.parseInt(id) && objet.getName() != null) {
+                Base.setName(objet.getName());
+            }
+        }
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(bases);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+
+        return bases;
+    }
+
+    @GetMapping("/api/customPizzas/lastId")
+    public int getCustomPizzas() throws IOException {
+        Gson gson = new Gson();
+        Object object = gson.fromJson(new FileReader("./assets/json/customPizza/customPizza.json"), Object.class);
+        // get last id from CustomPizza list objet
+        ArrayList<CustomPizza> customPizzas = gson.fromJson(gson.toJson(object), new TypeToken<ArrayList<CustomPizza>>() {
+        }.getType());
+
+        if (customPizzas.size() == 0) {
+            return 0;
+        } else {
+            return customPizzas.get(customPizzas.size() - 1).getId();
+        }
+
+    }
+
+    @PostMapping("/api/customPizza")
+    public CustomPizza postCustomPizza(@RequestBody CustomPizza objet) throws IOException {
+
+        String fileName = "./assets/json/customPizza/customPizza.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        // convertir la chaîne JSON en ArrayList d'objets
+        ArrayList<CustomPizza> customPizzas = new Gson().fromJson(json, new TypeToken<ArrayList<CustomPizza>>() {
+        }.getType());
+
+        // ajouter un nouvel objet à l'ArrayList
+        customPizzas.add(new CustomPizza(objet.getUuid(), objet.getId(), objet.getBase(), objet.getIngredients()));
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(customPizzas);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+        return objet;
     }
 }
