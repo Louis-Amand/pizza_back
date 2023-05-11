@@ -3,60 +3,70 @@
     "id": 1,
     "name": "Pizza Margherita",
     "image": "pizza.png",
+    "price" : "7 €",
     "ingredients": ["Tomate", "Mozzarella", "Basilic"]
   },
   {
     "id": 2,
     "name": "Pizza Pepperoni",
     "image": "pizza.png",
+    "price" : "10 €",
     "ingredients": ["Tomate", "Mozzarella", "Pepperoni"]
   },
   {
     "id": 3,
     "name": "Pizza Funghi",
     "image": "pizza.png",
+    "price" : "9 €",
     "ingredients": ["Tomate", "Mozzarella", "Champignons"]
   },
   {
     "id": 4,
-    "name": "Pizza Quattro Formaggi",
+    "name": "Pizza Formaggi",
     "image": "pizza.png",
+    "price" : "12 €",
     "ingredients": ["Tomate", "Mozzarella", "Gorgonzola", "Parmesan", "Fontina"]
   },
   {
     "id": 5,
     "name": "Pizza Diavola",
     "image": "pizza.png",
+    "price" : "12 €",
     "ingredients": ["Tomate", "Mozzarella", "Salami piquant", "Piments"]
   },
   {
     "id": 6,
     "name": "Pizza Capricciosa",
     "image": "pizza.png",
+    "price" : "13 €",
     "ingredients": ["Tomate", "Mozzarella", "Jambon", "Champignons", "Olives", "Œuf"]
   },
   {
     "id": 7,
-    "name": "Pizza Prosciutto e Funghi",
+    "name": "Pizza Prosciutto",
     "image": "pizza.png",
+    "price" : "11.50 €",
     "ingredients": ["Tomate", "Mozzarella", "Jambon", "Champignons"]
   },
   {
     "id": 8,
     "name": "Pizza Hawaii",
     "image": "pizza.png",
+    "price" : "6.66 €",
     "ingredients": ["Tomate", "Mozzarella", "Jambon", "Ananas"]
   },
   {
     "id": 9,
     "name": "Pizza Vegetariana",
     "image": "pizza.png",
+    "price" : "13 €",
     "ingredients": ["Tomate", "Mozzarella", "Poivrons", "Oignons", "Champignons", "Olives"]
   },
   {
     "id": 10,
     "name": "Pizza Quattro Stagioni",
     "image": "pizza.png",
+    "price" : "13 €",
     "ingredients": ["Tomate", "Mozzarella", "Jambon", "Champignons", "Poivrons", "Olives", "Artichauts", "Œuf"]
   }
 ]
