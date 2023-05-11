@@ -30,7 +30,7 @@ public class CustomPizzaController {
     @PostMapping("/api/ingredient")
     public ArrayList<Ingredient> getIngredient(@RequestBody Ingredient objet) throws IOException {
 
-        String fileName = "./assets/ingredients.json";
+        String fileName = "./assets/json/ingredient/ingredients.json";
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
         // convertir la chaîne JSON en ArrayList d'objets
@@ -55,7 +55,7 @@ public class CustomPizzaController {
     @DeleteMapping("/api/deleteIngredient/{id}")
     public ArrayList<Ingredient> deleteIngredientFromList(@PathVariable String id) throws IOException {
 
-        String fileName = "./assets/ingredients.json";
+        String fileName = "./assets/json/ingredient/ingredients.json";
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
         // convertir la chaîne JSON en ArrayList d'objets
@@ -72,6 +72,35 @@ public class CustomPizzaController {
                 return false;
             }
         });
+
+        // convertir l'ArrayList en JSON
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String jsonUpdated = gson.toJson(Ingredients);
+
+        // écrire le JSON mis à jour dans le fichier
+        FileWriter writer = new FileWriter(fileName);
+        writer.write(jsonUpdated);
+        writer.close();
+
+        return Ingredients;
+    }
+
+    @PutMapping("/api/ingredient/{id}")
+    public ArrayList<Ingredient> updateIngredients(@PathVariable String id, @RequestBody Ingredient objet) throws IOException {
+
+        String fileName = "./assets/json/ingredient/ingredients.json";
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+        // convertir la chaîne JSON en ArrayList d'objets
+        ArrayList<Ingredient> Ingredients = new Gson().fromJson(json, new TypeToken<ArrayList<Ingredient>>() {
+        }.getType());
+
+        // ajouter un nouvel objet à l'ArrayList
+        for (Ingredient ingredient : Ingredients) {
+            if (ingredient.getId() == Integer.parseInt(id) && objet.getName() != null) {
+                ingredient.setName(objet.getName());
+            }
+        }
 
         // convertir l'ArrayList en JSON
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
