@@ -1,0 +1,16 @@
+[
+  {
+    "uuid": "6d02e450-d704-4d68-ba91-49968884e39a",
+    "id": 0,
+    "base": {
+      "name": "spl956",
+      "id": 1
+    },
+    "ingredients": [
+      {
+        "name": "Oignons",
+        "id": 1
+      }
+    ]
+  }
+]
