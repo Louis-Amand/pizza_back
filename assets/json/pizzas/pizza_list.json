@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Margherita",
+    "image": "pizza.png",
+    "ingredients": ["Tomate", "Mozzarella", "Basilic"]
+  },
+  {
+    "id": 2,
+    "name": "Pizza Pepperoni",
+    "image": "pizza.png",
+    "ingredients": ["Tomate", "Mozzarella", "Pepperoni"]
+  }
+]
