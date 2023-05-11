@@ -6,11 +6,14 @@ public class Pizza {
     private long id;
     private String name;
     private String image;
+
+    private String price;
     private List<String> ingredients;
 
-    public Pizza(long id, String name, String image, List<String> ingredients) {
+    public Pizza(long id, String name, String image, String price, List<String> ingredients) {
         this.id = id;
         this.name = name;
+        this.price = price;
         this.image = image;
         this.ingredients = ingredients;
     }
@@ -21,6 +24,10 @@ public class Pizza {
 
     public String getName() {
         return name;
+    }
+
+    public String getPrice() {
+        return price;
     }
 
     public String getImage() {
