@@ -1,8 +1,7 @@
 package com.example.pizza_back.controller;
 
-import com.example.pizza_back.entity.Ingredient;
 import com.example.pizza_back.entity.Pizza;
-import com.google.gson.Gson;
+import com.google.gson.*;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +18,6 @@ import java.util.function.Predicate;
  */
 @RestController
 public class PizzaController {
-    private String fileName = "./assets/json/pizzas/pizza_list.json";
-
     /**
      * Gets all pizzas.
      *
@@ -29,22 +26,24 @@ public class PizzaController {
      */
     @GetMapping("/api/getAllPizzas")
     public ArrayList<Pizza> getAllPizzas() throws Exception {
+        String fileName = "./assets/json/pizzas/pizza_list.json";
+
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
         return new Gson().fromJson(json, new TypeToken<ArrayList<Pizza>>() {
         }.getType());
     }
 
     @PostMapping("/api/pizza")
-    public ArrayList<Pizza> getIngredient(@RequestBody Pizza objet) throws IOException {
+    public ArrayList<Pizza> postPizza(@RequestBody Pizza objet) throws IOException {
 
+        String fileName = "./assets/json/pizzas/pizza_list.json";
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
         // convertir la chaîne JSON en ArrayList d'objets
         ArrayList<Pizza> pizzas = new Gson().fromJson(json, new TypeToken<ArrayList<Pizza>>() {
         }.getType());
-
         // ajouter un nouvel objet à l'ArrayList
-        pizzas.add(objet);
+        pizzas.add(new Pizza(objet.getId(), objet.getName(), objet.getImage(), objet.getPrice(), objet.getIngredients()));
 
         // convertir l'ArrayList en JSON
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -59,8 +58,10 @@ public class PizzaController {
     }
 
     @DeleteMapping("/api/deletePizza/{id}")
-    public  Boolean deleteIngredientFromList(@PathVariable String id) throws IOException {
+    public  Boolean deletePizzaFromList(@PathVariable String id) throws IOException {
         final Boolean[] result = {false};
+        String fileName = "./assets/json/pizzas/pizza_list.json";
+
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
         // convertir la chaîne JSON en ArrayList d'objets
@@ -92,7 +93,8 @@ public class PizzaController {
     }
 
     @PutMapping("/api/pizza/{id}")
-    public ArrayList<Pizza> updateIngredients(@PathVariable String id, @RequestBody Pizza objet) throws IOException {
+    public ArrayList<Pizza> updatePizza(@PathVariable String id, @RequestBody Pizza objet) throws IOException {
+        String fileName = "./assets/json/pizzas/pizza_list.json";
 
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
