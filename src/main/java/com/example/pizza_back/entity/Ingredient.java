@@ -3,10 +3,12 @@ package com.example.pizza_back.entity;
 public class Ingredient {
     private String name;
     private int id;
+    private Float price;
 
-    public Ingredient(String name, int id) {
+    public Ingredient(String name, int id,Float price) {
         this.name = name;
         this.id = id;
+        this.price=price;
     }
 
     public String getName() {
@@ -23,5 +25,13 @@ public class Ingredient {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 }

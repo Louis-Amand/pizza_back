@@ -1,22 +1,12 @@
 [
   {
-    "name": "Oignons",
-    "id": 1
+    "name": "fromage",
+    "id": 1,
+    "price": 5.67
   },
   {
-    "name": "Salami",
-    "id": 2
-  },
-  {
-    "name": "Anchois",
-    "id": 3
-  },
-  {
-    "name": "Ananas",
-    "id": 4
-  },
-  {
-    "name": "tomate",
-    "id": 6
+    "name": "Viande",
+    "id": 2,
+    "price": 5.5
   }
 ]
