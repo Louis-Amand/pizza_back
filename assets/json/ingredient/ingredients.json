@@ -1,22 +1,22 @@
 [
   {
-    "name": "Oignons",
+    "name": "Anchois",
+    "price": 5,
+    "id": 0
+  },
+  {
+    "name": "fromage",
+    "price": 5,
     "id": 1
   },
   {
-    "name": "Salami",
+    "name": "Viande",
+    "price": 5,
     "id": 2
   },
   {
-    "name": "Anchois",
+    "name": "Requin",
+    "price": 5,
     "id": 3
-  },
-  {
-    "name": "Ananas",
-    "id": 4
-  },
-  {
-    "name": "tomate",
-    "id": 6
   }
 ]

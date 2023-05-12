@@ -37,7 +37,7 @@ public class CustomPizzaController {
         }.getType());
 
         // ajouter un nouvel objet à l'ArrayList
-        Ingredients.add(new Ingredient(objet.getName(), objet.getId()));
+        Ingredients.add(new Ingredient(objet.getName(), objet.getId(),objet.getPrice()));
 
         // convertir l'ArrayList en JSON
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -52,8 +52,8 @@ public class CustomPizzaController {
     }
 
     @DeleteMapping("/api/deleteIngredient/{id}")
-    public ArrayList<Ingredient> deleteIngredientFromList(@PathVariable String id) throws IOException {
-
+    public  Boolean deleteIngredientFromList(@PathVariable String id) throws IOException {
+        final Boolean[] result = {false};
         String fileName = "./assets/json/ingredient/ingredients.json";
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
@@ -66,6 +66,7 @@ public class CustomPizzaController {
             @Override
             public boolean test(Ingredient ingredient) {
                 if (ingredient.getId() == Integer.parseInt(id)) {
+                    result[0] = true;
                     return true;
                 }
                 return false;
@@ -81,7 +82,7 @@ public class CustomPizzaController {
         writer.write(jsonUpdated);
         writer.close();
 
-        return Ingredients;
+        return result[0];
     }
 
     @PutMapping("/api/ingredient/{id}")
@@ -98,6 +99,7 @@ public class CustomPizzaController {
         for (Ingredient ingredient : Ingredients) {
             if (ingredient.getId() == Integer.parseInt(id) && objet.getName() != null) {
                 ingredient.setName(objet.getName());
+                ingredient.setPrice(objet.getPrice());
             }
         }
 
@@ -161,8 +163,8 @@ public class CustomPizzaController {
     }
 
     @DeleteMapping("/api/deleteBase/{id}")
-    public ArrayList<Base> deleteBaseFromList(@PathVariable String id) throws IOException {
-
+    public Boolean deleteBaseFromList(@PathVariable String id) throws IOException {
+        final Boolean[] result = {false};
         String fileName = "./assets/json/bases/bases.json";
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
 
@@ -175,6 +177,7 @@ public class CustomPizzaController {
             @Override
             public boolean test(Base base) {
                 if (base.getId() == Integer.parseInt(id)) {
+                    result[0] =true;
                     return true;
                 }
                 return false;
@@ -190,7 +193,7 @@ public class CustomPizzaController {
         writer.write(jsonUpdated);
         writer.close();
 
-        return bases;
+        return result[0];
     }
 
     @PutMapping("/api/base/{id}")
