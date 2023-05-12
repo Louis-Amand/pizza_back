@@ -37,4 +37,24 @@ public class Pizza {
     public List<String> getIngredients() {
         return ingredients;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
+    }
 }
