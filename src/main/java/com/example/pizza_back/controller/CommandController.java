@@ -14,15 +14,21 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Command controller.
+ */
 @RestController
 public class CommandController {
 
+    /**
+     * Post commandes.
+     *
+     * @param objet the objet
+     * @throws IOException the io exception
+     */
     @PostMapping("/api/commandes")
     public void postCommandes(@RequestBody Commandes objet) throws IOException {
-        System.out.println("Commande reçue :");
-        System.out.println(objet);
-        writeToJsonFile(objet);
-        // Logique de traitement de la commande
+        writeToJsonFile(objet); // Logique de traitement de la commande
     }
 
     private void writeToJsonFile(Commandes objet) throws IOException {
