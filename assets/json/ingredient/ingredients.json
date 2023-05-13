@@ -8,5 +8,30 @@
     "name": "Viande",
     "id": 2,
     "price": 5.5
+  },
+  {
+    "name": "Tomate",
+    "id": 3,
+    "price": 1.0
+  },
+  {
+    "name": "Mozzarella",
+    "id": 4,
+    "price": 2.0
+  },
+  {
+    "name": "Basilic",
+    "id": 5,
+    "price": 3.0
+  },
+  {
+    "name": "Champignons",
+    "id": 6,
+    "price": 5.0
+  },
+  {
+    "name": "Pepperoni",
+    "id": 7,
+    "price": 9.0
   }
 ]
