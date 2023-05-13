@@ -9,6 +9,12 @@ public class CustomPizza {
     private Base base;
     private ArrayList<Ingredient> ingredients;
 
+    /**
+     * @param uuid
+     * @param id
+     * @param base
+     * @param ingredients
+     */
     public CustomPizza(String uuid, int id, Base base, ArrayList<Ingredient> ingredients) {
         this.uuid = uuid;
         this.id = id;

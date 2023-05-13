@@ -5,6 +5,10 @@ public class Base {
     private String name;
     private int id;
 
+    /**
+     * @param name
+     * @param id
+     */
     public Base(String name, int id) {
         this.name = name;
         this.id = id;

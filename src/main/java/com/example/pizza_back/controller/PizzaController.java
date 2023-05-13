@@ -33,6 +33,11 @@ public class PizzaController {
         }.getType());
     }
 
+    /**
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/api/pizza")
     public ArrayList<Pizza> postPizza(@RequestBody Pizza objet) throws IOException {
 
@@ -57,6 +62,11 @@ public class PizzaController {
         return pizzas;
     }
 
+    /**
+     * @param id
+     * @return
+     * @throws IOException
+     */
     @DeleteMapping("/api/deletePizza/{id}")
     public  Boolean deletePizzaFromList(@PathVariable String id) throws IOException {
         final Boolean[] result = {false};
@@ -92,6 +102,12 @@ public class PizzaController {
         return result[0];
     }
 
+    /**
+     * @param id
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PutMapping("/api/pizza/{id}")
     public ArrayList<Pizza> updatePizza(@PathVariable String id, @RequestBody Pizza objet) throws IOException {
         String fileName = "./assets/json/pizzas/pizza_list.json";

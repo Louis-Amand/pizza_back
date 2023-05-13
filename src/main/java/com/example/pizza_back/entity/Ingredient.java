@@ -5,6 +5,11 @@ public class Ingredient {
     private int id;
     private Float price;
 
+    /**
+     * @param name
+     * @param id
+     * @param price
+     */
     public Ingredient(String name, int id,Float price) {
         this.name = name;
         this.id = id;

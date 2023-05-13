@@ -18,6 +18,10 @@ import java.util.function.Predicate;
 @RestController
 public class CustomPizzaController {
 
+    /**
+     * @return
+     * @throws IOException
+     */
     @GetMapping("/api/ingredients")
     public Object getIngredient() throws IOException {
         Gson gson = new Gson();
@@ -26,6 +30,11 @@ public class CustomPizzaController {
         return object;
     }
 
+    /**
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/api/ingredient")
     public ArrayList<Ingredient> getIngredient(@RequestBody Ingredient objet) throws IOException {
 
@@ -51,6 +60,11 @@ public class CustomPizzaController {
         return Ingredients;
     }
 
+    /**
+     * @param id
+     * @return
+     * @throws IOException
+     */
     @DeleteMapping("/api/deleteIngredient/{id}")
     public  Boolean deleteIngredientFromList(@PathVariable String id) throws IOException {
         final Boolean[] result = {false};
@@ -85,6 +99,12 @@ public class CustomPizzaController {
         return result[0];
     }
 
+    /**
+     * @param id
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PutMapping("/api/ingredient/{id}")
     public ArrayList<Ingredient> updateIngredients(@PathVariable String id, @RequestBody Ingredient objet) throws IOException {
 
@@ -115,6 +135,10 @@ public class CustomPizzaController {
         return Ingredients;
     }
 
+    /**
+     * @return
+     * @throws IOException
+     */
     @GetMapping("/api/bases")
     public ArrayList<Base> getBases() throws IOException {
 
@@ -137,6 +161,11 @@ public class CustomPizzaController {
         return bases;
     }
 
+    /**
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/api/base")
     public ArrayList<Base> postBase(@RequestBody Base objet) throws IOException {
 
@@ -162,6 +191,11 @@ public class CustomPizzaController {
         return bases;
     }
 
+    /**
+     * @param id
+     * @return
+     * @throws IOException
+     */
     @DeleteMapping("/api/deleteBase/{id}")
     public Boolean deleteBaseFromList(@PathVariable String id) throws IOException {
         final Boolean[] result = {false};
@@ -196,6 +230,12 @@ public class CustomPizzaController {
         return result[0];
     }
 
+    /**
+     * @param id
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PutMapping("/api/base/{id}")
     public ArrayList<Base> updateIngredients(@PathVariable String id, @RequestBody Base objet) throws IOException {
 
@@ -225,6 +265,10 @@ public class CustomPizzaController {
         return bases;
     }
 
+    /**
+     * @return
+     * @throws IOException
+     */
     @GetMapping("/api/customPizzas/lastId")
     public int getCustomPizzas() throws IOException {
         Gson gson = new Gson();
@@ -241,6 +285,11 @@ public class CustomPizzaController {
 
     }
 
+    /**
+     * @param objet
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/api/customPizza")
     public CustomPizza postCustomPizza(@RequestBody CustomPizza objet) throws IOException {
 

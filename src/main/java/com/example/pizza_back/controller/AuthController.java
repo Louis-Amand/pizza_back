@@ -16,9 +16,17 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 @RestController
 public class AuthController {
 
+    /**
+     * @param user
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/api/login")
     public Boolean authCheck(@RequestBody User user) throws IOException {
         Boolean auth = false;

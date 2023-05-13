@@ -31,6 +31,10 @@ public class CommandController {
         writeToJsonFile(objet); // Logique de traitement de la commande
     }
 
+    /**
+     * @param objet
+     * @throws IOException
+     */
     private void writeToJsonFile(Commandes objet) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<Commandes> commandList = new ArrayList<>();

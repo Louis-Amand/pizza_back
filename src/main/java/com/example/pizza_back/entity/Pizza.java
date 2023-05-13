@@ -10,6 +10,13 @@ public class Pizza {
     private String price;
     private List<String> ingredients;
 
+    /**
+     * @param id
+     * @param name
+     * @param image
+     * @param price
+     * @param ingredients
+     */
     public Pizza(long id, String name, String image, String price, List<String> ingredients) {
         this.id = id;
         this.name = name;

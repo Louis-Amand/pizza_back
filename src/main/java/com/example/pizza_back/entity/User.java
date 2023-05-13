@@ -4,6 +4,13 @@ public class User {
     private String email;
     private String password;
 
+    /**
+     * @param name
+     * @param email
+     * @param password
+     * @param phone
+     * @param address
+     */
     public User(String name, String email, String password, String phone, String address) {
         this.email = email;
         this.password = password;
