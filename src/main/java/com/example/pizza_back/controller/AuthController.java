@@ -32,8 +32,6 @@ public class AuthController {
                 auth = true;
             }
         }
-
         return auth;
     }
-
 }
