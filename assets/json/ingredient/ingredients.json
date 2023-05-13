@@ -28,5 +28,10 @@
     "name": "Champignons",
     "id": 6,
     "price": 5.0
+  },
+  {
+    "name": "Pepperoni",
+    "id": 7,
+    "price": 9.0
   }
 ]

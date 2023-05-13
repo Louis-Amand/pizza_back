@@ -1,16 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Pizza Margherita",
-    "image": "pizza.png",
-    "price": "7 €",
-    "ingredients": [
-      "Tomate",
-      "Mozzarella",
-      "Basilic"
-    ]
-  },
-  {
     "id": 2,
     "name": "Pizza Pepperoni",
     "image": "pizza.png",
@@ -34,12 +23,16 @@
   },
   {
     "id": 4,
-    "name": "SQD",
+    "name": "FarFala",
     "image": "pizza.png",
-    "price": "5",
+    "price": "19",
     "ingredients": [
       "fromage",
       "Viande",
+      "Mozzarella",
+      "Basilic",
+      "Champignons",
+      "Pepperoni",
       "Tomate"
     ]
   }
