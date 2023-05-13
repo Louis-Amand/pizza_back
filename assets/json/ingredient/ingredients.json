@@ -1,42 +1,42 @@
 [
   {
-    "name": "fromage",
+    "name": "Bleu",
     "id": 1,
     "price": 1.0
   },
   {
-    "name": "Viande",
+    "name": "Viande hachée",
     "id": 2,
     "price": 1.0
   },
   {
     "name": "Tomate",
-    "id": 2,
-    "price": 1.0
+    "id": 3,
+    "price": 0.50
   },
   {
     "name": "Mozzarella",
-    "id": 2,
-    "price": 1.0
+    "id": 4,
+    "price": 0.50
   },
   {
     "name": "Gorgonzola",
-    "id": 2,
+    "id": 5,
     "price": 1.0
   },
   {
     "name": "Parmesan",
-    "id": 2,
+    "id": 6,
     "price": 1.0
   },
   {
     "name": "Fontina",
-    "id": 2,
-    "price": 1.0
+    "id": 7,
+    "price": 2.0
   },
   {
     "name": "Pepperoni",
-    "id": 3,
+    "id": 8,
     "price": 2.5
   }
 ]

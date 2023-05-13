@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Pizza Margherita",
     "image": "pizza.png",
-    "price": "7 €",
+    "price": "7",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -14,7 +14,7 @@
     "id": 2,
     "name": "Pizza Pepperoni",
     "image": "pizza.png",
-    "price": "10 €",
+    "price": "10",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -25,7 +25,7 @@
     "id": 3,
     "name": "Pizza Funghi",
     "image": "pizza.png",
-    "price": "9 €",
+    "price": "9",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -36,21 +36,19 @@
     "id": 4,
     "name": "Pizza Formaggi",
     "image": "pizza.png",
-    "price": "12 €",
+    "price": "12",
     "ingredients": [
-      "Tomate",
       "Mozzarella",
       "Gorgonzola",
       "Parmesan",
-      "Fontina",
-      "Viande"
+      "Fontina"
     ]
   },
   {
     "id": 5,
     "name": "Pizza Diavola",
     "image": "pizza.png",
-    "price": "12 €",
+    "price": "12",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -62,7 +60,7 @@
     "id": 6,
     "name": "Pizza Capricciosa",
     "image": "pizza.png",
-    "price": "13 €",
+    "price": "13",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -76,19 +74,19 @@
     "id": 7,
     "name": "Pizza Prosciutto",
     "image": "pizza.png",
-    "price": "11.50 €",
+    "price": "11.50",
     "ingredients": [
       "Tomate",
       "Mozzarella",
       "Jambon",
-      "Champignons"
+      "Prosciutto",
     ]
   },
   {
     "id": 8,
     "name": "Pizza Hawaii",
     "image": "pizza.png",
-    "price": "6.66 €",
+    "price": "6.66",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -100,7 +98,7 @@
     "id": 9,
     "name": "Pizza Vegetariana",
     "image": "pizza.png",
-    "price": "13 €",
+    "price": "13",
     "ingredients": [
       "Tomate",
       "Mozzarella",
@@ -108,32 +106,6 @@
       "Oignons",
       "Champignons",
       "Olives"
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Pizza Quattro Stagioni",
-    "image": "pizza.png",
-    "price": "13 €",
-    "ingredients": [
-      "Tomate",
-      "Mozzarella",
-      "Jambon",
-      "Champignons",
-      "Poivrons",
-      "Olives",
-      "Artichauts",
-      "Œuf"
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Bovine",
-    "image": "pizza.png",
-    "price": "16",
-    "ingredients": [
-      "fromage",
-      "Viande"
     ]
   }
 ]
