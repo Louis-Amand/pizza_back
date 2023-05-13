@@ -35,7 +35,7 @@ public class CommandController {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<Commandes> commandList = new ArrayList<>();
 
-        File file = new File("assets/json/order/order.json");
+        File file = new File("./assets/json/order/order.json");
         if (file.length() != 0) {
             // Lire les données existantes
             try (FileReader fileReader = new FileReader(file)) {
@@ -50,7 +50,7 @@ public class CommandController {
         commandList.add(objet);
 
         // Écrire la liste dans le fichier
-        try (FileWriter fileWriter = new FileWriter("assets/json/order/order.json")) {
+        try (FileWriter fileWriter = new FileWriter("./assets/json/order/order.json")) {
             gson.toJson(commandList, fileWriter);
         }
     }

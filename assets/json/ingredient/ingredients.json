@@ -8,5 +8,35 @@
     "name": "Viande",
     "id": 2,
     "price": 1.0
+  },
+  {
+    "name": "Tomate",
+    "id": 2,
+    "price": 1.0
+  },
+  {
+    "name": "Mozzarella",
+    "id": 2,
+    "price": 1.0
+  },
+  {
+    "name": "Gorgonzola",
+    "id": 2,
+    "price": 1.0
+  },
+  {
+    "name": "Parmesan",
+    "id": 2,
+    "price": 1.0
+  },
+  {
+    "name": "Fontina",
+    "id": 2,
+    "price": 1.0
+  },
+  {
+    "name": "Pepperoni",
+    "id": 3,
+    "price": 2.5
   }
 ]

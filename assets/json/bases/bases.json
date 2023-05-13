@@ -6,5 +6,9 @@
   {
     "name": "Pizza Margherita",
     "id": 1
+  },
+  {
+    "name": "Cremes",
+    "id": 2
   }
 ]
